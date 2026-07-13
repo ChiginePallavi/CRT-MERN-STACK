@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm --prefix \"placement Management System\" run dev",
+    "build": "npm --prefix \"placement Management System\" run build",
+    "preview": "npm --prefix \"placement Management System\" run preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

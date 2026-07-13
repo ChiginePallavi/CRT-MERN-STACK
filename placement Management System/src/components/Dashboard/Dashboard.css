@@ -1,3 +1,14 @@
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 24px;
+  background: #f5f7fb;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

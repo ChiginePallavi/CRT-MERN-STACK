@@ -82,6 +82,7 @@ function Register({ onStudentRegistered, setLogin }) {
     onStudentRegistered?.(formData);
     handleReset();
     alert("Registration successful!");
+    navigate('/students');
   };
 
   const handleReset = () => {

@@ -1,5 +1,5 @@
 nav {
-    background-color: coral;
+    background: linear-gradient(135deg, #2563eb 0%, #0f766e 100%);
     color: white;
     padding: 15px;
     display: flex;

@@ -1,15 +1,19 @@
-import "./Sidebar.css";
+import { Link } from 'react-router-dom';
+import './Sidebar.css';
 
 function Sidebar() {
   return (
-    <div>
+    <div className="sidebar">
       <h2>Sidebar</h2>
-      <li>dashboard</li>
-      <li>home</li>
-      <li>student details</li>
-      <li>marks</li>
-      <li>percentages</li>
-      <li>quiz</li>
+      <ul>
+        <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/students">Student Details</Link></li>
+        <li><Link to="/companies">Companies</Link></li>
+        <li><Link to="/marks">Marks</Link></li>
+        <li><Link to="/percentages">Percentages</Link></li>
+        <li><Link to="/quiz">Quiz</Link></li>
+      </ul>
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.companies-page {
+  padding: 20px;
+}
+
+.companies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.companies-table th,
+.companies-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.companies-table th {
+  background: #f8fafc;
+  color: #1d4ed8;
+}

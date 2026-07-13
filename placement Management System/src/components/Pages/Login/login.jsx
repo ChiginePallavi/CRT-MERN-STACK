@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./login.css";
 
-function Login({ isLogin, setLogin }) {
+function Login({ isLogin, setLogin, handleLogout }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -71,7 +71,10 @@ function Login({ isLogin, setLogin }) {
                 {isLogin ? (
                     <>
                         <p className="welcome-text">Welcome</p>
-                        <button className="login-btn secondary" onClick={() => setLogin(false)}>Logout</button>
+                        <div className="auth-actions">
+                            <button className="login-btn secondary" onClick={() => navigate('/register')}>Register</button>
+                            <button className="login-btn secondary" onClick={handleLogout}>Logout</button>
+                        </div>
                     </>
                 ) : (
                     <>
