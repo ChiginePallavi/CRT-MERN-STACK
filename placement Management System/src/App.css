@@ -1,0 +1,153 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+.content-area {
+  flex: 1;
+  padding: 24px;
+}
+
+.content-placeholder {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  color: #475569;
+  font-size: 18px;
+}
+
+.page-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.page-card h2 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef4ff, #f8fbff);
+  padding: 24px;
+}
+
+.landing-panel {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.landing-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.landing-btn {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.landing-btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.landing-btn.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.content-area {
+  flex: 1;
+  padding: 24px;
+}
+
+.content-placeholder {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: 18px;
+}
+
+.page-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.page-card h2 {
+  margin-top: 0;
+  color: var(--accent-2);
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(11,11,11,0.6), var(--bg));
+  padding: 24px;
+}
+
+.landing-panel {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.landing-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.landing-btn {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.landing-btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: black;
+}
+
+.landing-btn.secondary {
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+}

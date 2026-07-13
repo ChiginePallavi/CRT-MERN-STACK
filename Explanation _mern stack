@@ -1,0 +1,187 @@
+CRA----create react App
+many people creates projects with CRA
+->slow hot reloading
+->uneccessary configuration
+->slow startup
+->difficult configuration
+#command
+npx create-react -app my-app
+
+
+//Vite-->
+1.extremely fast
+2.HMR -->HOT module Replacement
+
+                ctrl+s
+                   |
+                browser updates immediately
+                    |
+                no full page reloading
+3.Lightweight:
+only essential packages will be installed so it is called Lightweight
+4.Modern technologies:
+uses ES Modules during development 
+5.Easy configuration
+
+Dashboard:
+<h1>250/h1> -->static
+250 students....might
+    /          \
+    Increase    decrease
+javascript knows
+butreact doesnt know
+react get to know that the data changed
+-->state
+
+real world problem:
+Facebook likes--100
+        |
+    if someone likes it
+        |
+        101(react state)
+what is state?
+State is a buil-in react object that stores the data which can change over time
+when the state changes,react automatically updates the UI
+
+->Variable changes
+    |
+    but react doesnt know
+    |
+    solution:
+    |
+    state
+     |
+     react re-renders
+     |
+     UI updates
+state changes:
+    ||
+    react dectects
+    ||
+    components re-renders
+    |
+    new displayed
+heart of react 
+
+what is hook?
+A hook is a special react function that allows functional component 
+to use react feactures
+
+-->useState is a hook used to create and manage 
+state inside a functional components
+
+import{useState} from "react"
+
+syntax of useState:
+const [state,setState] = useState(initial value)//250
+        |           |
+    current value   it is a function to update value
+    
+    //Tv
+state = 20
+setState = 21 22 23
+
+Events:action performed by the user
+1.clicking a button
+2.typing in a text box
+3.submitting a form 
+4.hovering on a element
+5.pressing a key
+
+react --event handlers
+
+common react Events
+1.onclick-->ButtonClicks
+2.onChange-->input value changes
+3.onSubmit-->form submission
+4.onMouseEnter-->Mouse enters an element
+5.on Mouseleave-->mouse leaves the element
+onkeyDown-->key pressed
+onKeyUp-->key is released
+
+Controlled components?
+is a form elements whose values is controlled by react state.
+
+Two way data Binding?
+    user types
+        |
+     Input box
+        |
+    onChange
+        |
+    react state
+        |
+        value
+        |
+    Input box updated
+
+Data Moves:
+input-->state
+state-->input two way data binding
+
+Instagram:
+       
+         Login page
+          /      \
+      success    Failure
+         /         \
+       Home       Login page(again enter the same thing)
+
+Ternary Operator: it is very important
+const age = 22
+age>18 ? "Eligible" : else "Not eligible"
+
+isLoggedIn ? "Welcome back" : "please login again"
+
+Register.jsx-- registration form and table
+      declare array
+      /                      \
+ Register.jsx              studentTable.jsx
+      |                       |
+  array[] ---->              array[]
+      \
+App.jsx -- array[declared]  
+       |
+       props
+
+What is React?
+Reacting is a process of displaced different pages
+based on the URL without refreshing the ele
+application
+
+SPA --> single page application
+
+How many HTML pages does react load?
+index.HTML(only one)
+
+React component
+1.Login
+2.Register
+3.Dashboard
+
+one HTML page and many components that is called as
+single page application
+
+
+MPA -->Multi Page application
+
+home.HTML
+index.HTML
+profile.HTML   Every page -- loads in MPA
+
+What is react router?
+it is a library that enables navigations between the pages
+without reloading the browser
+
+React -- NO built in routing
+
+We install -- react-router-dom
+
+Routes -- hook 
+this hook is also called as collcetion of URL paths 
+in your application
+
+Link -- it is a react router component
+used to navigate between pages without
+refreshing the browser
+
