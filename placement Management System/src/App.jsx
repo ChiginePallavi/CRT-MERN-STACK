@@ -7,6 +7,7 @@ import Login from './components/Pages/Login/login';
 import Register from './components/Registration/register';
 import Dashboard from './components/Dashboard/Dashboard';
 import StudentPage from './components/student/studentdetails';
+import Editstudents from './components/Pages/Editstudents/Editstudents';
 import Home from './components/Registration/Home';
 import ProtectedLayout from './components/Layout/ProtectedLayout';
 import NotFound from './components/NotFound/NotFound';
@@ -45,12 +46,26 @@ function App() {
   };
 
   const RegistrationPage = () => {
-    const [students, setStudents] = useState([]);
+    const [students, setStudents] = useState(() => {
+      try {
+        const raw = localStorage.getItem('students');
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    });
 
     const handleStudentRegistered = (student) => {
       setStudents((prev) => {
-        const nextStudents = [...prev, student];
-        localStorage.setItem('students', JSON.stringify(nextStudents));
+        const existing = Array.isArray(prev) ? prev : [];
+        const nextStudents = [...existing, student];
+        try {
+          const stored = JSON.parse(localStorage.getItem('students') || '[]');
+          const merged = Array.isArray(stored) ? [...stored, student] : [student];
+          localStorage.setItem('students', JSON.stringify(merged));
+        } catch (e) {
+          localStorage.setItem('students', JSON.stringify(nextStudents));
+        }
         return nextStudents;
       });
       localStorage.setItem('isLogin', 'true');
@@ -86,6 +101,10 @@ function App() {
         <Route
           path="/students"
           element={isLogin ? <ProtectedLayout><StudentPage /></ProtectedLayout> : <Navigate to="/login" replace />}
+        />
+        <Route
+          path="/students/edit/:id"
+          element={isLogin ? <ProtectedLayout><Editstudents /></ProtectedLayout> : <Navigate to="/login" replace />}
         />
         <Route
           path="/companies"
