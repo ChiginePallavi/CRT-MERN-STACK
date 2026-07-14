@@ -79,7 +79,15 @@ function Register({ onStudentRegistered, setLogin }) {
       return;
     }
 
-    onStudentRegistered?.(formData);
+    const studentToSave = { id: Date.now(), ...formData };
+    try {
+      const existing = JSON.parse(localStorage.getItem('students') || '[]');
+      const next = Array.isArray(existing) ? [...existing, studentToSave] : [studentToSave];
+      localStorage.setItem('students', JSON.stringify(next));
+    } catch (e) {
+      localStorage.setItem('students', JSON.stringify([studentToSave]));
+    }
+    onStudentRegistered?.(studentToSave);
     handleReset();
     alert("Registration successful!");
     navigate('/students');
