@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 
 import Navbar from './components/Navbar';
@@ -14,6 +14,7 @@ import Companies from './components/Companies/Companies';
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLogin, setLogin] = useState(() => {
     try {
       return localStorage.getItem('isLogin') === 'true';
@@ -21,6 +22,16 @@ function App() {
       return false;
     }
   });
+  const [isRouteLoading, setIsRouteLoading] = useState(false);
+
+  useEffect(() => {
+    setIsRouteLoading(true);
+    const timer = window.setTimeout(() => {
+      setIsRouteLoading(false);
+    }, 350);
+
+    return () => window.clearTimeout(timer);
+  }, [location.pathname]);
 
   const handleLogout = () => {
     setLogin(false);
@@ -56,6 +67,14 @@ function App() {
   return (
     <div>
       <Navbar isLogin={isLogin} handleLogout={handleLogout} />
+      {isRouteLoading && (
+        <div className="route-loading-overlay" aria-live="polite">
+          <div className="route-loading-card">
+            <div className="route-spinner" />
+            <p>Loading page...</p>
+          </div>
+        </div>
+      )}
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login isLogin={isLogin} setLogin={setLogin} handleLogout={handleLogout} />} />
