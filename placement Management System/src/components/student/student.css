@@ -30,6 +30,28 @@
   color: var(--text);
 }
 
+.students-table-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.students-search {
+  width: 320px;
+  max-width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+.students-search:focus {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+  border-color: #2563eb;
+}
+
 .student-actions button {
   margin-right: 8px;
   padding: 6px 10px;
@@ -38,5 +60,6 @@
   cursor: pointer;
 }
 
+.btn-edit { background: rgba(255,122,0,0.14); color: var(--text); }
 .btn-delete { background: rgba(255,0,0,0.12); color: var(--text); }
 .btn-view { background: rgba(255,255,255,0.03); color: var(--accent); }
