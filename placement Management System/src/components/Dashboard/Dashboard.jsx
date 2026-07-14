@@ -12,11 +12,37 @@ function Dashboard() {
   useEffect(() => {
     try {
       const storedStudents = JSON.parse(localStorage.getItem('students') || '[]');
-      setTotalStudents(storedStudents.length);
+      const parsedStudents = Array.isArray(storedStudents) ? storedStudents : [];
+      setTotalStudents(parsedStudents.length);
+
+      const storedPlacedStudents = Number(localStorage.getItem('placedStudents'));
+      if (!Number.isNaN(storedPlacedStudents) && storedPlacedStudents >= 0) {
+        setPlacedStudents(storedPlacedStudents);
+      }
+
+      const storedCompanies = Number(localStorage.getItem('companies'));
+      if (!Number.isNaN(storedCompanies) && storedCompanies >= 0) {
+        setCompanies(storedCompanies);
+      }
+
+      const storedPendingStudents = Number(localStorage.getItem('pendingStudents'));
+      if (!Number.isNaN(storedPendingStudents) && storedPendingStudents >= 0) {
+        setPendingStudents(storedPendingStudents);
+      }
     } catch (e) {
       setTotalStudents(0);
     }
   }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('placedStudents', String(placedStudents));
+      localStorage.setItem('companies', String(companies));
+      localStorage.setItem('pendingStudents', String(pendingStudents));
+    } catch (e) {
+      console.error('Unable to save dashboard stats', e);
+    }
+  }, [placedStudents, companies, pendingStudents]);
 
   function handleAddStudent() {
     navigate('/register');
